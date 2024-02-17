@@ -59,7 +59,26 @@ router.get('/:uuid/edit', function(req, res, next) {
 
 /* POST contacts edit  */
 router.post('/:uuid/edit', function(req, res, next) {
-  //console.log(req.body);
+  // 1. 校验数据
+  // 2. 如果失败,render 到edit页, 并且携带校验的错误信息
+  const contact = contactsRepo.queryById(req.params.uuid);
+  if (req.body.firstName.trim() === '') {
+    res.render('contacts_edit', {title: 'Edit a Contact', msg: 'firstName can not be empty!', contact: contact});
+  }
+  if (req.body.lastName.trim() === '') {
+    res.render('contacts_edit', {title: 'Edit a Contact', msg: 'lastName can not be empty!', contact: contact});
+  }
+  // 3. 如果成功,调用repository的更新方法
+  contact.firstName = req.body.firstName
+  contact.lastName = req.body.lastName
+  contact.email = req.body.email
+  contact.firstName = req.body.firstName
+  contactsRepo.update(contact);
+  // 4. 最后再重定向到列表页
+  res.redirect('/contacts');
+
+
+
   if (req.body.contactText.trim() === '') {
     const contact = contactsRepo.queryById(req.params.uuid);
     res.render('contacts_edit', {title: 'Edit contact', msg: 'Contact text can not be empty!', contact: contact});

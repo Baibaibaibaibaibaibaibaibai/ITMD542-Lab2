@@ -46,7 +46,6 @@ const repo = {
     },
     update: (contact) => {
         db.set(contact.id, contact);
-        db.set(contact.firstName, contact)
         saveData();
     },
 

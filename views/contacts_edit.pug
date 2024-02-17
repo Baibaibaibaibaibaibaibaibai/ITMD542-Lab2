@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1= title
+    p Use the form below to edit this contact.
+    hr
+    if msg
+        p(class='redtext')= msg
+    form(method='POST' action=`/contacts/${contact.id}/edit`)
+        span firstName:
+        input(type='text' name='firstName' placeholder='please input firstName' value=contact.firstName)
+        br
+        br
+        span lastName:
+        input(type='text' name='lastName' placeholder='please input lastName' value=contact.lastName)
+        br
+        br
+        span email:
+        input(type='text' name='email' placeholder='please input email' value=contact.email)
+        br
+        br
+        span notes:
+        input(type='textarea' name='notes' placeholder='please input notes' value=contact.notes)
+        br
+        br
+        button(type='submit') Save Changes
+        br
+        br
+    a(href='/contacts') Cancel
