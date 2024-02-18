@@ -3,7 +3,7 @@
 ### Name: Dongqi Bai
 ### Email: dbai1@hawk.iit.edu
 ### Class and Assignment numbers: ITMD-542-Lab2
-###  Git repository URL: https://github.com/Baibaibaibaibaibaibaibaibai/ITMD542-Lab2.git
+###  Git repository URL: https://github.com/Baibaibaibaibaibaibaibaibai/ITMD542-Lab2
 ## Project Description
 ### This is an address book where you can add, read, edit, or delete contacts.
 #### Development Environment:
