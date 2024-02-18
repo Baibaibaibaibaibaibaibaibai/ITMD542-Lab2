@@ -1,8 +1,15 @@
 # ITMD-542-Lab2
 
-## This is an address book where you can add, read, edit, or delete contacts.
-
-## How to Use?
+### Name: Dongqi Bai
+### Email: dbai1@hawk.iit.edu
+### Class and Assignment numbers: ITMD-542-Lab2
+###  Git repository URL: https://github.com/Baibaibaibaibaibaibaibaibai/ITMD542-Lab2.git
+## Project Description
+### This is an address book where you can add, read, edit, or delete contacts.
+#### Development Environment:
+##### MacOS: 14.2.1 (23C71)
+##### NodeJS Version: v20.10.0
+## Installation/Running Instructions:
 ### How to Run the Project Locally
 ####This guide will walk you through the process of setting up and running this project on your local machine.
 
@@ -31,6 +38,7 @@
 
 ### Online access
 http://itmd542-lab2-dongqi.someget.work/
+### Insights and Results
 #### Homepage:
 ![img_1.png](images/img_1.png)
 #### Contacts:
