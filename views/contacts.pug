@@ -1,13 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  a(href='/contacts/add') Add a Contact
-  hr
-  if contacts.length > 0
-    #contacts-wrapper
-      ul.contacts-list
-        each val in contacts
-          li(data-contactid=val.id)
-            a(href=`/contacts/${val.id}`)=  `${val.firstName} ${val.lastName}`
+  div(class="flex flex-col items-center justify-start min-h-screen py-8 bg-gray-100")
+    h1(class="text-xl font-semibold text-gray-800")= title
+    p(class="text-gray-600") Welcome to #{title}
+    a(href='/contacts/add' class="mt-4 inline-block bg-green-500 text-white font-semibold py-2 px-4 rounded-lg shadow") Add a Contact
+    hr(class="my-4 border-t border-gray-300 w-full max-w-md")
+    if contacts.length > 0
+      div(id="contacts-wrapper" class="w-full max-w-md")
+        ul(class="contacts-list list-none")
+          each val in contacts
+            li(class="my-2" data-contactid=val.id)
+              a(href=`/contacts/${val.id}` class="block bg-white py-2 px-4 rounded-lg shadow text-gray-800 hover:bg-gray-50")= `${val.firstName} ${val.lastName}`

@@ -1,14 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p FirstName: #{contact.firstName}
-  p LastName: #{contact.lastName}
-  p email: #{contact.email}
-  p notes: #{contact.notes}
-  p createdAt: #{contact.createdAt}
-
-  div.contact-actions
-    a(href=`/contacts/${contact.id}/delete`) Delete Contact
-    | 
-    a(href=`/contacts/${contact.id}/edit`) Edit Contact
+  div(class="flex flex-col items-center justify-start min-h-screen py-8 bg-gray-100")
+    h1(class="text-xl font-semibold text-gray-800 mb-4")= title
+    div(class="bg-white shadow-md rounded-lg p-4 max-w-md w-full")
+      p(class="text-gray-600") FirstName: #{contact.firstName}
+      p(class="text-gray-600") LastName: #{contact.lastName}
+      p(class="text-gray-600") Email: #{contact.email}
+      p(class="text-gray-600") Notes: #{contact.notes}
+      p(class="text-gray-600") Created At: #{contact.createdAt}
+    div(class="contact-actions mt-4 flex justify-around w-full max-w-md")
+      a(href=`/contacts/${contact.id}/delete` class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow focus:outline-none focus:shadow-outline transition-colors duration-150 ease-in-out") Delete Contact
+      span(class="text-gray-400 mx-2") |
+      a(href=`/contacts/${contact.id}/edit` class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow focus:outline-none focus:shadow-outline transition-colors duration-150 ease-in-out") Edit Contact
+      span(class="text-gray-400 mx-2") |
+      a(href='/contacts' class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg shadow focus:outline-none focus:shadow-outline transition-colors duration-150 ease-in-out") Return

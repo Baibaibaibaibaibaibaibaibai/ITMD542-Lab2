@@ -1,29 +1,24 @@
 extends layout
 
 block content
-    h1= title
-    p Use the form below to edit this contact.
-    hr
-    if msg
-        p(class='redtext')= msg
-    form(method='POST' action=`/contacts/${contact.id}/edit`)
-        span firstName:
-        input(type='text' name='firstName' placeholder='please input firstName' value=contact.firstName)
-        br
-        br
-        span lastName:
-        input(type='text' name='lastName' placeholder='please input lastName' value=contact.lastName)
-        br
-        br
-        span email:
-        input(type='text' name='email' placeholder='please input email' value=contact.email)
-        br
-        br
-        span notes:
-        input(type='textarea' name='notes' placeholder='please input notes' value=contact.notes)
-        br
-        br
-        button(type='submit') Save Changes
-        br
-        br
-    a(href='/contacts') Cancel
+    div(class="flex flex-col items-center justify-start min-h-screen py-8 bg-gray-100")
+        h1(class="text-xl font-semibold text-gray-800 mb-4")= title
+        p(class="text-gray-600 mb-4") Use the form below to edit this contact.
+        hr(class="border-t border-gray-300 w-full max-w-md mb-4")
+        if msg
+            p(class='text-red-500 bg-red-100 border border-red-400 p-2 rounded-md w-full max-w-md text-center')= msg
+        form(method='POST' action=`/contacts/${contact.id}/edit` class="flex flex-col items-center w-full max-w-md")
+            label(class="flex flex-col w-full mb-4")
+                span(class="text-gray-800") First Name:
+                input(type='text' name='firstName' placeholder='Please input first name' value=contact.firstName class="mt-1 p-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500")
+            label(class="flex flex-col w-full mb-4")
+                span(class="text-gray-800") Last Name:
+                input(type='text' name='lastName' placeholder='Please input last name' value=contact.lastName class="mt-1 p-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500")
+            label(class="flex flex-col w-full mb-4")
+                span(class="text-gray-800") Email:
+                input(type='text' name='email' placeholder='Please input email' value=contact.email class="mt-1 p-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500")
+            label(class="flex flex-col w-full mb-4")
+                span(class="text-gray-800") Notes:
+                input(type='textarea' name='notes' placeholder='Please input notes' value=contact.notes class="mt-1 p-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500")
+            button(type='submit' class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow focus:outline-none focus:shadow-outline") Save Changes
+        a(href='/contacts' class="mt-4 text-blue-500 hover:text-blue-600 font-semibold") Cancel
